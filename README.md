@@ -37,31 +37,88 @@
 
 #### 2.1.1 深度学习方向基础
 
-1. 深度学习基础（感知机算法，数据集读取，定义模型，损失函数，优化算法，模型结果评估）
+1. ##### 深度学习基础
 
-2. 更好的优化算法（SGD、批量下降、动量法、Adam等）
+   - 感知机算法+激活函数（Sigmoid、Tanh、ReLU、Leaky ReLU、PReLU、Softmax等）
+   - 数据集读取
+   - 定义网络模型（多层感知机）
+   - 基本损失函数（均方误差、交叉熵误差等）
+   - 优化算法（梯度法）
+   - 模型结果评估（拟合、过拟合、欠拟合、不收敛）
+   - Pytorch基本使用
 
-3. 深度卷积神经网络（AlexNet、VGG、GoogLeNet、ResNet、DenseNet）
+2. ##### 更好的优化算法
 
-4. 数据集制作与数据增强
+   - 随机梯度下降法（SGD）
+   - 小批量梯度下降法
+   - 动量法
+   - Adam算法
 
-5. 目标检测网络（SSD、R-CNN系列、YOLO系列、YOLO-Npose(关键点检测)）
 
-6. YOLOv5 的主干网络更改、裁剪，输出层设计,损失函数设计
+3. ##### 深度卷积神经网络
 
-7. 损失函数的设计与改进（Focal Loss、OHEM loss、IOU loss）
+   - 基本架构层：卷积层、池化层、全连接层
+   - 经典网络模型：AlexNet、VGG、GoogLeNet、ResNet、DenseNet
+   - 数据增强方法：hsv通道值随机修改；翻转；背景变换；添加椒盐噪声等
 
-8. 网络增强技巧（注意力机制、图像频域特征、图像金字塔等）
+4. **目标检测网络**
 
-9. 网络架构轻量化（ShuffleNet V2的网络高效原则、MobileNet等新型轻量化网络模块设计、重参数化）
+   - SSD
 
-10. 网络的剪枝、量化和蒸馏
+   - R-CNN系列
 
-11. YOLO 后端推理（OpenVino,TensorRT,OpenCV(dnn),ONNXRuntime)
+   - YOLO系列：
 
-12. （RNN->LSTM->Transformer->ViT->DETR）
+     - 输入端：Mosaic数据增强、自适应锚框计算，以及自适应图片缩放
 
-    （入门推荐书籍：《深度学习入门：基于Python的理论和实现》、《动手学深度学习》、《Pytorch实战》）
+       主干网络：Focus结构、CSP结构
+
+       Neck网络：FPN+PAN结构
+
+       输出端：GIOU_Loss
+
+   - YOLO-Npose(关键点检测)）：关键点回归设计
+
+5. **YOLOv5 的主干网络更改、裁剪**
+
+   - 更换主干网络的Block
+     - 更换Shuffle Block
+     - 更换Mobile Block
+     - 添加SE注意力机制
+     - ...
+   - 修改网络深度或者相应的检测头
+
+6. **损失函数的设计与改进**
+
+
+   - Focal Loss、OHEM loss、IOU loss
+
+7. **网络轻量化方法**
+
+
+   - 剪枝
+   - 量化
+   - 蒸馏
+
+8. **YOLO 后端推理（C++部署）**
+
+
+   - ONNXRuntime
+   - OpenVino
+   - TensorRT
+   - OpenCV(dnn)
+
+9. **Vision Transformer**（比赛暂未使用）
+
+
+   - RNN->LSTM->Transformer->ViT->DETR
+
+
+附：
+
+入门推荐书籍：《深度学习入门：基于Python的理论和实现》、《动手学深度学习》、《Pytorch实战》
+
+推荐课程：斯坦福CS231n
 
 #### 2.1.2 深度学习方向研究方向建议
 
