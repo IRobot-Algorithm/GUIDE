@@ -1,6 +1,10 @@
-有疑问请及时与我联系
+# rm算法组的最简docker入门文档
 
-池威律, 694621753@qq.com,
+
+| 版本 | 日期       | 人员                     | 修改记录                                                     |
+| ---- | ---------- | ---------------------- | ------------------------------------------------------------ |
+| v1.0 | 2024-2-04 | 池威律, 694621753@qq.com  | 添加rm算法组的最简docker入门文档          |
+
 
 ### 前言
 
@@ -49,68 +53,63 @@ docker最重要的三个概念为**Dockerfile**、**image**、**container**。�
 
 ### docker安装命令
 
-``` 
-# 从Docker的官方网站下载安装脚本
-curl -fsSL https://get.docker.com -o getdocker.sh
-sudo sh ./getdocker.sh
-
-# 到此docker已经安装结束，在nuc上安装docker建议继续执行以下命令
-# 将当前登录的用户添加到'docker'组允许该用户在不使用sudo的情况下运行Docker命令
-sudo usermod -aG docker $UESR
-# 将当前会话的用户切换到指定的docker组
-newgrp docker
-# 设置 Docker 服务在系统启动时自动启动
-sudo systemctl enable docker.service
-```
+  ``` 
+  # 从Docker的官方网站下载安装脚本
+  curl -fsSL https://get.docker.com -o getdocker.sh
+  sudo sh ./getdocker.sh
+  
+  # 到此docker已经安装结束，在nuc上安装docker建议继续执行以下命令
+  # 将当前登录的用户添加到'docker'组允许该用户在不使用sudo的情况下运行Docker命令
+  sudo usermod -aG docker $UESR
+  # 将当前会话的用户切换到指定的docker组
+  newgrp docker
+  # 设置 Docker 服务在系统启动时自动启动
+  sudo systemctl enable docker.service
+  ```
 
 
 
 ### docker运行命令
 
-``` 
-# 在与Dockerfile同级的目录下根据Dockerfile编译镜像
-docker build -t vc_image .
-# 根据已编译好的镜像创建容器并运行，示例中容器名为vc_devel，镜像名为vc_image
-docker run -it --name vc_devel \
---privileged --network host \
--v /dev:/dev   \
-vc_image \
-
-# 创建过容器后，下次只需start
-docker start vc_devel
-# 增加更多终端
-docker exec -it vc_devel bash
-# 停止容器
-docker stop vc_devel
-# 退出docker容器
-exit
-
-```
-
-
+  ``` 
+  # 在与Dockerfile同级的目录下根据Dockerfile编译镜像
+  docker build -t vc_image .
+  # 根据已编译好的镜像创建容器并运行，示例中容器名为vc_devel，镜像名为vc_image
+  docker run -it --name vc_devel \
+  --privileged --network host \
+  -v /dev:/dev   \
+  vc_image \
+  
+  # 创建过容器后，下次只需start
+  docker start vc_devel
+  # 增加更多终端
+  docker exec -it vc_devel bash
+  # 停止容器
+  docker stop vc_devel
+  # 退出docker容器
+  exit
+  ```
 
 ### docker发布与拉取命令
 
-``` 
-# 这里以ghcr为例，GHCR是由GitHub提供的用于存储Docker镜像的服务。
-docker pull ghcr.io/shitoujie/vision_control:latest
-```
+  ``` 
+  # 这里以ghcr为例，GHCR是由GitHub提供的用于存储Docker镜像的服务。
+  docker pull ghcr.io/shitoujie/vision_control:latest
+  ```
+- related links: [ghcr 快速上手教程](https://blog.csdn.net/easylife206/article/details/108480444?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170424990016800188531527%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170424990016800188531527&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-108480444-null-null.142^v99^pc_search_result_base4&utm_term=github%20ghcr&spm=1018.2226.3001.4187)
 
-
-related links: [ghcr 快速上手教程](https://blog.csdn.net/easylife206/article/details/108480444?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170424990016800188531527%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170424990016800188531527&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-108480444-null-null.142^v99^pc_search_result_base4&utm_term=github%20ghcr&spm=1018.2226.3001.4187)
-
-
+  
 
 ### docker相关删除命令
 
-``` 
-docker ps -a
-# 删除容器（container）
-docker rm [CONTAINER ID]
-docker images 	#REPOSITORY下的即为image name
-# 删除镜像（image）
-docker image rm [IMAGE NAME] 
-```
+  ``` 
+  docker ps -a
+  # 删除容器（container）
+  docker rm [CONTAINER ID]
+  docker images 	#REPOSITORY下的即为image name
+  # 删除镜像（image）
+  docker image rm [IMAGE NAME] 
+  ```
 
 
 
