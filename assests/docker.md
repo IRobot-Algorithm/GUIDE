@@ -3,14 +3,14 @@
 
 | 版本 | 日期       | 人员                     | 修改记录                                                     |
 | ---- | ---------- | ---------------------- | ------------------------------------------------------------ |
-| v1.0 | 2024-2-04 | 池威律, 694621753@qq.com  | 添加rm算法组的最简docker入门文档          |
+| v1.0 | 2024-01-04 | 池威律, 694621753@qq.com  | 添加rm算法组的最简docker入门文档          |
 
 
 ### 前言
 
 这是一份适用于**rm算法组的最简docker入门文档**，列出了最常用的docker命令。
 
-- [docker的官方文档](https://docs.docker.com/guides/get-started/)内容丰富，但是对于初学者来说可能过于丰富了。
+- 入门docker可查看[docker的官方文档](https://docs.docker.com/guides/get-started/)，但是对于初学者来说官方文档的内容可能过于丰富了。
 - DockerFile示例及Docker部署使用可查看这两个仓库[Vision_Control](https://github.com/IRobot-Algorithm/Vision_Control) ， [rm_vision](https://gitlab.com/rm_vision/rm_vision)
 
 
@@ -29,7 +29,9 @@
 
 docker最重要的三个概念为**Dockerfile**、**image**、**container**。这篇[文章]( https://zhuanlan.zhihu.com/p/187505981)较详细地解释了三者的概念。
 
-- 一种常见流程是
+以下是docker开发部署的两种常见流程。
+
+- 第一种常见流程是
 
   1.开发者将代码的运行环境写入`docker/Dockerfile`文件，在Dockerfile中指定需要哪些程序、依赖什么样的配置,与开发的代码一同发布在github上。
   
