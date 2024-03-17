@@ -21,16 +21,22 @@
 ### 1.2 工程基础
 
 1. ROS2 基础
-   [鱼香ros](https://fishros.com/d2lros2foxy/)（此链接为foxy版本教程，比humble版本详细）看完第六章“动手学ROS2常用工具”
-2. 大恒相机使用
 
-3. Can 通信和串口通信 (可参考assert下"通信.md")
+   - [鱼香ros](https://fishros.com/d2lros2foxy/)（此链接为foxy版本教程，比humble版本详细）看完第六章“动手学ROS2常用工具”
+2. TF2
 
-4. 基本 python 和 matlab 使用
+   - 了解TF坐标系转换，TF树等相关概念和知识点
 
-5. 常用调试工具、设备认识和使用
 
-6. 常见报错处理认识和解决途径
+3. 大恒相机使用
+
+4. Can 通信和串口通信 (可参考assert下"通信.md")
+
+5. 基本 python 和 matlab 使用
+
+6. 常用调试工具、设备认识和使用
+
+7. 常见报错处理认识和解决途径
 
 ### 1.3 进阶基础
 
