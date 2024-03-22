@@ -1,6 +1,7 @@
 # GBD调试教程
 | 版本 | 日期       | 人员                     | 修改记录                                                     |
 | ---- | ---------- | ---------------------- | ------------------------------------------------------------ |
+| v1.1 | 2024-3-22 | 段智博 ， 995291627@qq.com |  完善教程        |
 | v1.0 | 2024-3-18 | 段智博 ， 995291627@qq.com |  增加GDB调试教程        |
 
 ## 什么是GDB?
@@ -13,7 +14,8 @@ GDB是一个调试工具。
 
 ## 配置GDB
 
-在我们工作的文件夹下打开VSCode，应该是这个界面![image-20240316223013442](imgs/GDB_Image/image-20240316223013442.png)
+在我们工作的文件夹下打开VSCode，应该是这个界面
+![image-20240316223013442](imgs/GDB_Image/image-20240316223013442.png)
 
 然后打开上图红框内的标志，应该会出现以下界面
 
@@ -82,30 +84,7 @@ GDB是一个调试工具。
 
   - program 这个的路径是你要调试的文件，被编译后生成的二进制文件。比如我要调试的是basic_detector节点，而basic_detector节点内的文件被cmake编译后生成的二进制文件叫basic_detector，于是就这么导入了。不同节点的文件一般都在build文件夹里。
   
-  - preLaunchTask:在launch之前执行的任务。此时我们把任务的标签设置为"Make Source"。下面会告诉大家怎么配置任务。
-  
-    
 
-## 配置任务
-
-在.vscode里创建一个tasks.json文件。
-
-```json
-{
-    "version": "2.0.0",
-    "tasks":[
-        {
-            "label":"Make source",
-            "type": "shell",
-            "command": "source install/setup.bash"
-        }
-    ]
-}
-```
-
-label的值要跟上面preLaunchTask的值一样
-
-这个的具体用处。。我还在研究
 
 在加入了这些配置文件后，还需要在CmakeLists里加一条语句：
 
@@ -147,11 +126,134 @@ SET(CMAKE_BUILD_TYPE "Debug")
 
 之后就可以设置断点和调试了。
 
-## 待解决的问题
-### 如何多节点调试？  
-目前的办法是在launch.json里多加几个配置，然后一个个把他们launch起来。有没有launch一次就把节点都launch起来的方法呢？
+但是如何才能自动source呢？
+我们可以修改.bashrc文件，达到自动source的目的(详见自动source教程)
+好像还有一种方法，就是配置一个tasks.json文件，但我还没有成功，有兴趣的同学可以参照官方文档研究一下。
 
-### 如何默认source，不用此重启VScode都要source一次呢？  
-目前的方法是修改.bashrc，有没有改tasks.json的办法？
+## 如何多节点调试？  
+目前的办法是在launch.json里多加几个配置，然后一个个把他们launch起来。像这样：
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      // Example gdb launch of a ros executable
+      {
+        "name": "(gdb) Launch1",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/rmos_detector/basic_detector",//"${workspaceFolder}/build/rmos_processer/processer",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      {
+        "name": "(gdb) Launch2",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/rmos_processer/processer",//"${workspaceFolder}/build/rmos_processer/processer",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      
+    ],
+}
+```
+但是这样很麻烦，启动时还需要一个一个点launch1，launch2。
+![Alt text](./imgs/GDB_Image/image.png)
+因此我们使用另一个功能，叫```compounds```
+它在launch.json里的写法是这样的:
+```json
+"compounds": [
+      {
+        "name": "launch2node",
+        "configurations": ["(gdb) Launch1", "(gdb) Launch"],
+        //"preLaunchTask": "${defaultBuildTask}",
+        "stopAll": true
+      }
+    ]
+```
+加上这段代码后，我们整体文件看下来是这样的:
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      // Example gdb launch of a ros executable
+      {
+        "name": "(gdb) Launch1",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/rmos_detector/basic_detector",//"${workspaceFolder}/build/rmos_processer/processer",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      {
+        "name": "(gdb) Launch2",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/rmos_processer/processer",//"${workspaceFolder}/build/rmos_processer/processer",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      
+    ],
+    "compounds": [
+      {
+        "name": "launch2node",
+        "configurations": ["(gdb) Launch1", "(gdb) Launch"],
+        //"preLaunchTask": "${defaultBuildTask}",
+        "stopAll": true
+      }
+    ]
+  }
+```
+在调试选项里我们可以看到
+![Alt text](./imgs/GDB_Image/image-1.png)
+点击这个就可以一次launch两个节点。想要launch更多节点，就写configurations就可以啦。
 
-[官方文档](https://code.visualstudio.com/docs/editor/debugging#_data-inspection)有详细的解释，我还在研究，弄明白了再写在这里。也欢迎大家一起研究~
+# 后记
+[官方文档](https://code.visualstudio.com/docs/editor/debugging#_data-inspection)有详细的解释，里面也有很多其他功能，欢迎大家一起研究~
