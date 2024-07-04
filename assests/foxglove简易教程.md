@@ -16,7 +16,7 @@ sudo apt-get install ros-foxy-rosbridge-suite
 
 启动rosbridge
 ```bash
-ros2 launch rosbridge_server rosbridge_websocket_launch.xml.
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 ```
 在foxglove中打开Open connection...
 ![Alt text](./imgs/foxglove/image.png)
