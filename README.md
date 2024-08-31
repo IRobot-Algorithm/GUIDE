@@ -53,8 +53,9 @@
    - [基础教程【C++设计模式入门】 ](https://www.bilibili.com/video/BV1Yr4y157Ci/?share_source=copy_web&vd_source=52d55c81781f4ac8050a12c384d3295a)
 2. C++高级特性和标准模板库使用
 3. 原生并发编程和常用并发库（TBB，OpenMP）
-   1. [TBB官方教程](https://www.intel.com/content/www/us/en/docs/onetbb/get-started-guide/2021-12/overview.html)
-   2. [OpenMP官方教程](https://www.openmp.org/resources/refguides/)
+   1. [高性能并行编程与优化 教程](https://github.com/parallel101/course)
+   2. [TBB官方教程](https://www.intel.com/content/www/us/en/docs/onetbb/get-started-guide/2021-12/overview.html)
+   3. [OpenMP官方教程](https://www.openmp.org/resources/refguides/)
 4. Docker 基础
 
 ## 2. 细化方向
