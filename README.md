@@ -2,7 +2,8 @@
 
 | 版本 | 日期       | 人员                   | 修改记录                                                     |
 | ---- | ---------- | ---------------------- | ------------------------------------------------------------ |
-| v1.3 | 2024-3-22 | 段智博，995291627@qq.com |细化ros2基础部分要求;添加推荐教程    |
+| v1.4 | 2024-9-1 | 关超，2533290454@qq.com | 添加工程进阶                                                |
+| v1.3 | 2024-3-22 | 段智博，995291627@qq.com | 细化ros2基础部分要求;添加推荐教程    |
 | v1.2 | 2023-12-01 | 李曾阳， 975813725@qq.com  | 添加1.1.6 Git的常用操作；细化 2.1深度学习方向的内容          |
 | v1.1 | 2023-11-16 | 吴勇前， 1102567801@qq.com | 添加 *2.2.1 slam基础部分* 的推荐学习课程与方法，细化了里程计与定位方法 |
 | v1.0 | 2023-06-25 | 郑桂勇， 2712089295@qq.com | 首次提交                                                     |
@@ -17,6 +18,7 @@
 4. 自定义训练集下 YOLO 训练及调参
 5. 相机模型、标定、2D-3D (PNP)
 6. Git的常用操作
+7. Markdown语法基础
 
 ### 1.2 工程基础
 
@@ -31,7 +33,7 @@
    - 学习foxglove可视化工具(可参考asserts下"foxglove简易教程.md")
 2. 大恒相机使用
 
-3. Can 通信和串口通信 (可参考asserts下"通信.md")
+3. Can 通信和串口通信 (可参考assets下"通信.md")
 
 4. 基本 python 和 matlab 使用
 
@@ -43,6 +45,22 @@
 
 1. 基本滤波器状态估计机理（KF,EKF)
 2. 优化基本原理及优化库的使用（G2O,Ceres）
+
+### 1.4 工程进阶（非必须）
+1. 常用的设计模式（策略模式、工厂模式、单例模式等）
+   - [基础教程【C++设计模式入门】 ](https://www.bilibili.com/video/BV1Yr4y157Ci/?share_source=copy_web&vd_source=52d55c81781f4ac8050a12c384d3295a)
+2. C++高级特性和标准模板库使用
+3. 原生并发编程和常用并发库（TBB，OpenMP）
+   1. [TBB官方教程](https://www.intel.com/content/www/us/en/docs/onetbb/get-started-guide/2021-12/overview.html)
+   2. [OpenMP官方教程](https://www.openmp.org/resources/refguides/)
+4. 推理框架
+   1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
+   2. [ONNX官方教程](https://onnxruntime.ai/docs)
+   3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
+5. GPU 编程基础
+   1. CUDA
+   2. OpenCL
+6. Docker 基础
 
 ## 2. 细化方向
 
@@ -188,3 +206,6 @@
 3. 深入学习算法原理（IMU 预积分，建图算法，规划算法，感知算法等）
 
 4. 心有余力者，可多看书如《机器人的状态估计》，多看论文（Mars Lab(hku) , HKUST Aerial Robotics Group , Fast Lab (zju) , STAR Lab(sysu) ）
+
+#### 2.2.3 仿真方向（等待补充）
+#### 2.2.4 机械臂方向（等待补充）
