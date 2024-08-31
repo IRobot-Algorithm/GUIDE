@@ -72,11 +72,11 @@ sudo systemctl restart docker
 ### 想要在docker里面使用 cuda 最方便的是直接pull docker hub上的官方镜像
 [docker hub nvidia 官方链接](https://hub.docker.com/r/nvidia/cuda/)
 直接拉取官方镜像兼容性会更好一些
-## ---拉取docker image遇到网络问题---
+## ---拉取docker image遇到网络问题---（弃用，可以使用鱼香ros的一键安装中的docker代理解决此问题）
 在进行对image的pull的时候可能会遇到由于网络问题无法pull的情况(包括开全局梯子也不行)
 这种情况下可以使用[skopeo](https://github.com/containers/skopeo)工具进行pull
 ### 更新 也可以用 fishros的一键安装系列 更新docker的代理
-### 1,Ubuntu(20.10以上)环境下
+### 1,Ubuntu(20.10以上)环境下输入下面的命令
 ```
 sudo apt-get -y update
 sudo apt-get -y install skopeo

@@ -46,21 +46,14 @@
 1. 基本滤波器状态估计机理（KF,EKF)
 2. 优化基本原理及优化库的使用（G2O,Ceres）
 
-### 1.4 工程进阶（非必须）
+### 1.4 工程进阶
 1. 常用的设计模式（策略模式、工厂模式、单例模式等）
    - [基础教程【C++设计模式入门】 ](https://www.bilibili.com/video/BV1Yr4y157Ci/?share_source=copy_web&vd_source=52d55c81781f4ac8050a12c384d3295a)
 2. C++高级特性和标准模板库使用
 3. 原生并发编程和常用并发库（TBB，OpenMP）
    1. [TBB官方教程](https://www.intel.com/content/www/us/en/docs/onetbb/get-started-guide/2021-12/overview.html)
    2. [OpenMP官方教程](https://www.openmp.org/resources/refguides/)
-4. 推理框架
-   1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
-   2. [ONNX官方教程](https://onnxruntime.ai/docs)
-   3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
-5. GPU 编程基础
-   1. CUDA
-   2. OpenCL
-6. Docker 基础
+4. Docker 基础
 
 ## 2. 细化方向
 
@@ -157,6 +150,15 @@
    - 斯坦福CS231n（经典深度学习入门课程）
    - 台大李宏毅系列视频
    - TensorFlow2.0（北京大学曹健老师，课程用的tensorflow，讲的不错，可选看）
+
+#### 2.1.3 工程实践
+1. 推理框架
+   1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
+   2. [ONNX官方教程](https://onnxruntime.ai/docs)
+   3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
+2. GPU 编程基础
+   1. CUDA
+   2. OpenCL
 
 #### 2.1.3 深度学习方向研究方向建议
 
