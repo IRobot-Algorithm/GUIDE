@@ -57,6 +57,7 @@
    2. [TBB官方教程](https://www.intel.com/content/www/us/en/docs/onetbb/get-started-guide/2021-12/overview.html)
    3. [OpenMP官方教程](https://www.openmp.org/resources/refguides/)
 4. Docker 基础
+   1. 可参考asserts下"docker.md"
 
 ## 2. 细化方向
 
@@ -211,6 +212,3 @@
 3. 深入学习算法原理（IMU 预积分，建图算法，规划算法，感知算法等）
 
 4. 心有余力者，可多看书如《机器人的状态估计》，多看论文（Mars Lab(hku) , HKUST Aerial Robotics Group , Fast Lab (zju) , STAR Lab(sysu) ）
-
-#### 2.2.3 仿真方向（等待补充）
-#### 2.2.4 机械臂方向（等待补充）
