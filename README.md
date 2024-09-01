@@ -131,10 +131,10 @@
    - 蒸馏
 
 8. **YOLO 后端推理（C++部署）**
-   - ONNXRuntime
-   - OpenVino
-   - TensorRT
-   - OpenCV(dnn)
+   1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
+   2. [ONNX官方教程](https://onnxruntime.ai/docs)
+   3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
+   4. OpenCV(dnn)
 
 9. **Vision Transformer**（比赛暂未使用）
 
@@ -155,15 +155,6 @@
    - 台大李宏毅系列视频
    - TensorFlow2.0（北京大学曹健老师，课程用的tensorflow，讲的不错，可选看）
 
-#### 2.1.3 工程实践
-1. 推理框架
-   1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
-   2. [ONNX官方教程](https://onnxruntime.ai/docs)
-   3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
-2. GPU 编程基础
-   1. CUDA
-   2. OpenCL
-
 #### 2.1.3 深度学习方向研究方向建议
 
    1. 顶刊顶会论文阅读，关注热点，多看代码
@@ -171,8 +162,11 @@
    3. 探讨将追踪技术引入姿态估计中，比较与目前方案的优劣性
    4. 探讨将语义分割引入比赛（雷达站，哨兵）等，比较与目前方案的优劣性
    5. 探讨将单双目深度估计引入比赛（雷达站，哨兵）等，比较与目前方案的优劣性
-   6. 探讨将深度强化学习引入比赛（控制，决策）等，比较与目前方案的优劣性
-   7. 更多请自由探索，发挥想象力
+   6. 探讨将深度强化学习引入比赛（控制，决策）等，比较与目前方案的优劣性  
+   7.  GPU 编程基础
+       1. CUDA
+       2. OpenCL
+   8.  更多请自由探索，发挥想象力
 
 ### 2.2 SLAM 方向
 
