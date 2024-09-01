@@ -130,7 +130,7 @@
    - 剪枝
    - 蒸馏
 
-8. **YOLO 后端推理（C++部署）**
+8. **后端推理（C++部署）**
    1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
    2. [ONNX官方教程](https://onnxruntime.ai/docs)
    3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
