@@ -163,9 +163,9 @@
    4. 探讨将语义分割引入比赛（雷达站，哨兵）等，比较与目前方案的优劣性
    5. 探讨将单双目深度估计引入比赛（雷达站，哨兵）等，比较与目前方案的优劣性
    6. 探讨将深度强化学习引入比赛（控制，决策）等，比较与目前方案的优劣性  
-   7.  GPU 编程基础
-       1. CUDA
-       2. OpenCL
+   7.  GPU 编程
+       1. [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
+       2. [OpenCL Programming (C/C++)](https://ulhpc-tutorials.readthedocs.io/en/latest/gpu/opencl/)
    8.  更多请自由探索，发挥想象力
 
 ### 2.2 SLAM 方向
