@@ -2,7 +2,8 @@
 
 | 版本 | 日期       | 人员                   | 修改记录                                                     |
 | ---- | ---------- | ---------------------- | ------------------------------------------------------------ |
-| v1.3 | 2024-3-22 | 段智博，995291627@qq.com |细化ros2基础部分要求;添加推荐教程    |
+| v1.4 | 2024-09-01 | 关超，2533290454@qq.com | 添加工程进阶                                                |
+| v1.3 | 2024-03-22 | 段智博，995291627@qq.com | 细化ros2基础部分要求;添加推荐教程    |
 | v1.2 | 2023-12-01 | 李曾阳， 975813725@qq.com  | 添加1.1.6 Git的常用操作；细化 2.1深度学习方向的内容          |
 | v1.1 | 2023-11-16 | 吴勇前， 1102567801@qq.com | 添加 *2.2.1 slam基础部分* 的推荐学习课程与方法，细化了里程计与定位方法 |
 | v1.0 | 2023-06-25 | 郑桂勇， 2712089295@qq.com | 首次提交                                                     |
@@ -17,6 +18,7 @@
 4. 自定义训练集下 YOLO 训练及调参
 5. 相机模型、标定、2D-3D (PNP)
 6. Git的常用操作
+7. Markdown语法基础
 
 ### 1.2 工程基础
 
@@ -31,18 +33,31 @@
    - 学习foxglove可视化工具(可参考asserts下"foxglove简易教程.md")
 2. 大恒相机使用
 
-3. Can 通信和串口通信 (可参考asserts下"通信.md")
+3. Can 通信和串口通信 (可参考assets下"通信.md")
 
 4. 基本 python 和 matlab 使用
 
 5. 常用调试工具、设备认识和使用
    - 学习GDB调试（可参考asserts下"GBD调试教程.md"）
 6. 常见报错处理认识和解决途径
+7. 代码性能分析
+   - 学习`gprof`调试（可参考asserts下"程序性能检测可视化"）
 
 ### 1.3 进阶基础
 
 1. 基本滤波器状态估计机理（KF,EKF)
 2. 优化基本原理及优化库的使用（G2O,Ceres）
+
+### 1.4 工程进阶
+1. 常用的设计模式（策略模式、工厂模式、单例模式等）
+   - [基础教程【C++设计模式入门】 ](https://www.bilibili.com/video/BV1Yr4y157Ci/?share_source=copy_web&vd_source=52d55c81781f4ac8050a12c384d3295a)
+2. C++高级特性和标准模板库使用
+3. 原生并发编程和常用并发库（TBB，OpenMP）
+   1. [高性能并行编程与优化 教程](https://github.com/parallel101/course)
+   2. [TBB官方教程](https://www.intel.com/content/www/us/en/docs/onetbb/get-started-guide/2021-12/overview.html)
+   3. [OpenMP官方教程](https://www.openmp.org/resources/refguides/)
+4. Docker 基础
+   1. 可参考asserts下"docker.md"
 
 ## 2. 细化方向
 
@@ -115,11 +130,11 @@
    - 剪枝
    - 蒸馏
 
-8. **YOLO 后端推理（C++部署）**
-   - ONNXRuntime
-   - OpenVino
-   - TensorRT
-   - OpenCV(dnn)
+8. **后端推理（C++部署）**
+   1. [TensorRT官方教程](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html)
+   2. [ONNX官方教程](https://onnxruntime.ai/docs)
+   3. [OpenVINO官方教程](https://docs.openvino.ai/latest/openvino_docs_install_guides_overview.html)
+   4. OpenCV(dnn)
 
 9. **Vision Transformer**（比赛暂未使用）
 
@@ -147,8 +162,11 @@
    3. 探讨将追踪技术引入姿态估计中，比较与目前方案的优劣性
    4. 探讨将语义分割引入比赛（雷达站，哨兵）等，比较与目前方案的优劣性
    5. 探讨将单双目深度估计引入比赛（雷达站，哨兵）等，比较与目前方案的优劣性
-   6. 探讨将深度强化学习引入比赛（控制，决策）等，比较与目前方案的优劣性
-   7. 更多请自由探索，发挥想象力
+   6. 探讨将深度强化学习引入比赛（控制，决策）等，比较与目前方案的优劣性  
+   7.  GPU 编程
+       1. [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
+       2. [OpenCL Programming (C/C++)](https://ulhpc-tutorials.readthedocs.io/en/latest/gpu/opencl/)
+   8.  更多请自由探索，发挥想象力
 
 ### 2.2 SLAM 方向
 
