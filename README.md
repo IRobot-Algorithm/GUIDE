@@ -29,7 +29,7 @@
       [官方文档](https://docs.ros.org/en/foxy/index.html)建议大家克服英语困难，或借助翻译软件学习。官方文档写得非常好。
 
       [鱼香ros](https://fishros.com/d2lros2foxy/)（此链接为foxy版本教程，比humble版本详细）要求掌握到第六章“动手学ROS2常用工具”的知识
- 
+
    - （了解）TF2坐标转换、TF树等相关概念
 
    - 学习foxglove可视化工具(可参考asserts下"foxglove简易教程.md")
@@ -176,7 +176,7 @@
 
 1. 了解常用的地图格式 （推荐：高飞 移动机器人运动规划）
 
-2. 了解PCL库与pcl_ros的使用
+2. 了解PCL库与pcl_ros的使用，icp算法原理（推荐：《视觉SLAM十四讲》第七讲）
 
 3. 在 Nav2 中实现仿真环境下的导航问题，并**理清不同 Frame 之间的转换及作用**，以及**理清定位，里程计，全局地图，局部地图和全局规划，局部规划的关系**（可通过tf2_tools观看Frame之间的转换帮助理解，通过rqt_graph理清导航的完整框架）
 
