@@ -2,6 +2,7 @@
 
 - [IRobot 算法组培养路线](#irobot-算法组培养路线)
   - [前言](#前言)
+  - [基础阶段大方向学习任务](#基础阶段大方向学习任务)
   - [开发工具链](#开发工具链)
   - [项目通用工具库](#项目通用工具库)
   - [优化工程](#优化工程)
@@ -21,7 +22,6 @@
 graph LR
 A[基础阶段] --> B[进阶阶段] --> C[研究阶段]
 
-
 style A stroke:#600,stroke-width:4px
 
 style B stroke:#1,stroke-width:4px
@@ -29,6 +29,24 @@ style B stroke:#1,stroke-width:4px
 style C stroke:#333,stroke-width:4px
 
 ```
+
+## 基础阶段大方向学习任务
+下面几个内容是基础中的基础，学习完成之后可以继续看后面的学习任务
+```mermaid
+graph LR;
+
+A[C/C++]  --> C[OpenCV] --> D[ROS2]
+B[Linux] --> C
+
+style A stroke:#600,stroke-width:4px
+
+style B stroke:#600,stroke-width:4px
+
+style C stroke:#600,stroke-width:4px
+
+style D stroke:#600,stroke-width:4px
+```
+
 
 ## 开发工具链
 
@@ -45,8 +63,9 @@ graph TD;
     F --> G[CAN通信和串口通信];
     
     I[项目管理] --> J[git];
-    I --> K[Markdown];
+    I --> N[项目文档编写] --> K[Markdown];
     I --> M[Docker];
+    
 
     K --> L[Mermaid];
 
